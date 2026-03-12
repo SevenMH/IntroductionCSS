@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a CSS</title>
+   <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌟 Lo básico de CSS</h1>
+        <p>Aprende los fundamentos para dar estilo a tus páginas web</p>
+    </header>
+
+    <section>
+        <h2>¿Qué es CSS?</h2>
+        <p><strong>CSS</strong> (Cascading Style Sheets) es un lenguaje que define la presentación de un documento escrito en HTML. Con CSS controlamos colores, fuentes, márgenes, posiciones y mucho más.</p>
+        <p>CSS funciona mediante <strong>reglas</strong> que asocian propiedades y valores a elementos HTML.</p>
+    </section>
+
+    <section>
+        <h2>Sintaxis básica</h2>
+        <p>Una regla CSS se compone de un <strong>selector</strong> y un bloque de declaraciones entre llaves <code>{ }</code>:</p>
+        <div class="ejemplo">
+            selector {<br>
+            &nbsp;&nbsp;propiedad: valor;<br>
+            &nbsp;&nbsp;otra-propiedad: otro-valor;<br>
+            }
+        </div>
+        <p>Por ejemplo:</p>
+        <div class="ejemplo">
+            p {<br>
+            &nbsp;&nbsp;color: blue;<br>
+            &nbsp;&nbsp;font-size: 16px;<br>
+            }
+        </div>
+        <p>Esto haría que todos los párrafos <code>&lt;p&gt;</code> tengan texto azul y tamaño 16 píxeles.</p>
+    </section>
+
+    <section>
+        <h2>Formas de aplicar CSS</h2>
+        <ul>
+            <li><strong>CSS en línea (inline):</strong> mediante el atributo <code>style</code> en una etiqueta HTML.
+                <div class="ejemplo">&lt;p style="color: red;"&gt;Texto rojo&lt;/p&gt;</div>
+            </li>
+            <li><strong>CSS interno:</strong> dentro de una etiqueta <code>&lt;style&gt;</code> en el <code>&lt;head&gt;</code> del documento.</li>
+            <li><strong>CSS externo:</strong> en un archivo separado con extensión <code>.css</code> y enlazado con <code>&lt;link&gt;</code>.</li>
+        </ul>
+        <p>Esta misma página usa CSS interno (mira dentro de <code>&lt;style&gt;</code> en el código fuente).</p>
+    </section>
+
+    <section>
+        <h2>Selectores comunes</h2>
+        <ul>
+            <li><strong>Selector de elemento:</strong> <code>p</code>, <code>h1</code>, <code>div</code> → afecta a todas las etiquetas de ese tipo.</li>
+            <li><strong>Selector de clase:</strong> <code>.nombre-clase</code> → afecta a elementos con <code>class="nombre-clase"</code>.</li>
+            <li><strong>Selector de ID:</strong> <code>#id</code> → afecta al elemento con <code>id="id"</code> (debe ser único).</li>
+        </ul>
+        <p>Ejemplo: En esta página usamos la clase <code>.ejemplo</code> para los recuadros grises.</p>
+    </section>
+
+    <section>
+        <h2>Propiedades básicas</h2>
+        <p>Algunas propiedades que puedes usar:</p>
+        <ul>
+            <li><code>color</code>: color del texto.</li>
+            <li><code>background-color</code>: color de fondo.</li>
+            <li><code>font-size</code>: tamaño de la fuente.</li>
+            <li><code>margin</code>: margen exterior.</li>
+            <li><code>padding</code>: relleno interior.</li>
+            <li><code>border</code>: borde.</li>
+        </ul>
+        <div class="ejemplo">
+            h1 {<br>
+            &nbsp;&nbsp;color: white;<br>
+            &nbsp;&nbsp;background-color: #4CAF50;<br>
+            &nbsp;&nbsp;padding: 10px;<br>
+            &nbsp;&nbsp;border-radius: 5px;<br>
+            }
+        </div>
+        <p>El encabezado de esta página está estilizado con algo similar.</p>
+    </section>
+
+    <section>
+        <h2>Ejemplo práctico</h2>
+        <p>Observa el siguiente párrafo con estilos aplicados directamente:</p>
+        <p style="color: #4CAF50; font-weight: bold; font-size: 1.2em;">¡Este texto está en verde y negrita gracias a CSS en línea!</p>
+        <p>Y este es un <span class="destacado">texto destacado</span> usando una clase CSS.</p>
+    </section>
+
+    <footer style="text-align: center; margin-top: 20px; color: #777;">
+        <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>
+    </footer>
+
+</body>
+</html>
