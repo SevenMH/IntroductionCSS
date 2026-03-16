@@ -616,6 +616,283 @@
     </div>
 </section>
 
+<!--- Introducción a Alineación y Centrados Complejos con Flexbox  ----->
+<section>
+    <h2>🎯 Alineación y Centrados Complejos con Flexbox</h2>
+    
+    <p><strong>Flexbox</strong> no solo sirve para alineaciones básicas, sino que permite resolver problemas de centrado complejos que antes requerían trucos complicados o cálculos manuales. Con las propiedades adecuadas, podemos centrar elementos tanto horizontal como verticalmente, incluso en situaciones con múltiples elementos, tamaños variables o contenido dinámico.</p>
+    
+    <h3>📋 ¿Para qué sirve?</h3>
+    <ul>
+        <li><strong>Centrado perfecto:</strong> Tanto horizontal como vertical, incluso con elementos de tamaño variable.</li>
+        <li><strong>Distribución inteligente:</strong> Controlar espacios entre elementos de forma automática.</li>
+        <li><strong>Diseños responsivos:</strong> Que se adaptan sin necesidad de media queries complejas.</li>
+        <li><strong>Alineaciones asimétricas:</strong> Posicionar elementos en lugares específicos del contenedor.</li>
+        <li><strong>Elementos flotantes:</strong> Crear efectos como "sticky" o elementos que se mantienen en posición.</li>
+    </ul>
+
+    <h3>🏗️ Centrado Perfecto (Holy Grail de Flexbox)</h3>
+    <p>El "Santo Grial" del centrado con Flexbox: centrar un elemento tanto horizontal como verticalmente.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="centrado-perfecto">
+            <div class="caja-centrada">
+                <span class="icono">⭐</span>
+                <h4>Elemento Centrado</h4>
+                <p>Este contenido está centrado perfectamente en ambos ejes</p>
+                <button class="btn-demo">Click aquí</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .centrado-perfecto {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;justify-content: center;  /* Centrado horizontal */<br>
+        &nbsp;&nbsp;align-items: center;      /* Centrado vertical */<br>
+        &nbsp;&nbsp;height: 300px;<br>
+        }
+    </div>
+
+    <h3>📏 Distribución Compleja con Espacio Automático</h3>
+    <p>Usando <code>margin: auto</code> y <code>gap</code> para crear distribuciones complejas sin cálculos manuales.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="distribucion-compleja">
+            <div class="item">Izquierda</div>
+            <div class="item centro-auto">Centrado automático</div>
+            <div class="item">Derecha</div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .distribucion-compleja {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;gap: 20px;<br>
+        }<br>
+        .centro-auto {<br>
+        &nbsp;&nbsp;margin: 0 auto;  /* Empuja elementos a los lados */<br>
+        }
+    </div>
+
+    <h3>🔄 Alineación Multielemento con Diferentes Tamaños</h3>
+    <p>Cuando los elementos tienen diferentes alturas, Flexbox los alinea perfectamente.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="alturas-variables">
+            <div class="item altura-1">Pequeño</div>
+            <div class="item altura-2">Mediano<br>con dos líneas</div>
+            <div class="item altura-3">Grande<br>con tres<br>líneas de texto</div>
+            <div class="item altura-1">Pequeño</div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .alturas-variables {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;align-items: stretch;  /* Todos la misma altura */<br>
+        &nbsp;&nbsp;gap: 10px;<br>
+        }
+    </div>
+
+    <h3>📦 Grid de Cards con Flexbox</h3>
+    <p>Creando un grid de tarjetas que se alinean perfectamente aunque tengan diferente contenido.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-img">🖼️</div>
+                <h4>Card 1</h4>
+                <p>Contenido breve</p>
+                <button class="card-btn">Ver más</button>
+            </div>
+            <div class="card">
+                <div class="card-img">🖼️</div>
+                <h4>Card 2</h4>
+                <p>Este contenido es más largo y hace que la tarjeta tenga más texto, pero todas se alinean perfectamente</p>
+                <button class="card-btn">Ver más</button>
+            </div>
+            <div class="card">
+                <div class="card-img">🖼️</div>
+                <h4>Card 3</h4>
+                <p>Contenido mediano con dos líneas</p>
+                <button class="card-btn">Ver más</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .grid-cards {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;flex-wrap: wrap;<br>
+        &nbsp;&nbsp;gap: 20px;<br>
+        }<br>
+        .card {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;flex-direction: column;<br>
+        &nbsp;&nbsp;flex: 1 1 250px;  /* Crecen, se encogen, base 250px */<br>
+        }
+    </div>
+
+    <h3>📐 Centrado con Elementos Superpuestos</h3>
+    <p>Centrar elementos que se superponen usando Flexbox combinado con posicionamiento.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="superposicion">
+            <div class="fondo">🔵 Fondo</div>
+            <div class="superpuesto">✨ Elemento superpuesto centrado</div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .superposicion {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;justify-content: center;<br>
+        &nbsp;&nbsp;align-items: center;<br>
+        &nbsp;&nbsp;position: relative;<br>
+        }<br>
+        .superpuesto {<br>
+        &nbsp;&nbsp;position: absolute;  /* Se superpone */<br>
+        }
+    </div>
+
+    <h3>📊 Barra de Progreso con Flexbox</h3>
+    <p>Creando una barra de progreso interactiva que se ajusta automáticamente.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="progreso-container">
+            <div class="progreso-label">Progreso: <span>75%</span></div>
+            <div class="progreso-barra">
+                <div class="progreso-llenado" style="width: 75%"></div>
+            </div>
+            <div class="progreso-estados">
+                <span>Inicio</span>
+                <span>75% completado</span>
+                <span>Meta</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .progreso-barra {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;height: 20px;<br>
+        &nbsp;&nbsp;background: #e0e0e0;<br>
+        }<br>
+        .progreso-llenado {<br>
+        &nbsp;&nbsp;background: #4CAF50;<br>
+        &nbsp;&nbsp;transition: width 0.3s;<br>
+        }
+    </div>
+
+    <h3>🔄 Menú con Elementos Flotantes y Centrados</h3>
+    <p>Combinando diferentes tipos de alineación en un menú complejo.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="menu-complejo">
+            <div class="menu-logo">🏠 MiLogo</div>
+            <div class="menu-centro">
+                <a href="#" class="menu-link">Inicio</a>
+                <a href="#" class="menu-link">Productos</a>
+                <a href="#" class="menu-link">Servicios</a>
+                <a href="#" class="menu-link">Contacto</a>
+            </div>
+            <div class="menu-derecha">
+                <button class="menu-icono">🔍</button>
+                <button class="menu-icono">👤</button>
+                <button class="menu-btn">🛒 3</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .menu-complejo {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;justify-content: space-between;<br>
+        &nbsp;&nbsp;align-items: center;<br>
+        }<br>
+        .menu-centro {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;gap: 20px;<br>
+        }
+    </div>
+
+    <h3>📱 Centrado Responsive con Flexbox</h3>
+    <p>Ejemplo de cómo el centrado se adapta a diferentes tamaños de pantalla.</p>
+    
+    <div class="flexbox-complejo-demo">
+        <div class="responsive-demo">
+            <div class="responsive-item">1</div>
+            <div class="responsive-item">2</div>
+            <div class="responsive-item">3</div>
+            <div class="responsive-item">4</div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .responsive-demo {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;flex-wrap: wrap;<br>
+        &nbsp;&nbsp;justify-content: center;  /* Centra en móvil */<br>
+        &nbsp;&nbsp;gap: 15px;<br>
+        }<br>
+        @media (min-width: 768px) {<br>
+        &nbsp;&nbsp;.responsive-demo {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;  /* Distribuye en escritorio */<br>
+        &nbsp;&nbsp;}<br>
+        }
+    </div>
+
+    <h3>💡 Casos de uso comunes</h3>
+    <ul>
+        <li><strong>Centrado de modales:</strong> Perfecto para ventanas emergentes.</li>
+        <li><strong>Galerías de imágenes:</strong> Con diferentes tamaños de imágenes.</li>
+        <li><strong>Headers complejos:</strong> Con logo centrado y elementos en los extremos.</li>
+        <li><strong>Pie de página con múltiples columnas:</strong> Distribución equitativa.</li>
+        <li><strong>Formularios centrados:</strong> Con campos de diferentes tamaños.</li>
+        <li><strong>Barras de herramientas:</strong> Con iconos y texto alineados.</li>
+    </ul>
+
+    <h3>🎯 Propiedades clave para alineaciones complejas</h3>
+    <table class="propiedades-table">
+        <tr>
+            <th>Propiedad</th>
+            <th>Qué hace</th>
+            <th>Ejemplo de uso complejo</th>
+        </tr>
+        <tr>
+            <td><code>justify-content</code></td>
+            <td>Alineación en eje principal</td>
+            <td><code>space-around</code> para espacios iguales alrededor</td>
+        </tr>
+        <tr>
+            <td><code>align-items</code></td>
+            <td>Alineación en eje cruzado</td>
+            <td><code>baseline</code> para alinear textos</td>
+        </tr>
+        <tr>
+            <td><code>align-self</code></td>
+            <td>Alineación individual</td>
+            <td>Sobrescribir alineación para un elemento específico</td>
+        </tr>
+        <tr>
+            <td><code>flex-grow</code></td>
+            <td>Crecimiento proporcional</td>
+            <td>Crear columnas de diferentes tamaños</td>
+        </tr>
+        <tr>
+            <td><code>margin: auto</code></td>
+            <td>Empuje automático</td>
+            <td>Centrar un elemento entre otros dos</td>
+        </tr>
+        <tr>
+            <td><code>gap</code></td>
+            <td>Espaciado entre elementos</td>
+            <td>Crear grids sin márgenes laterales</td>
+        </tr>
+    </table>
+</section>
+
     <footer style="text-align: center; margin-top: 20px; color: #777;">
         <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>
     </footer>
