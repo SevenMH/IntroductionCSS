@@ -893,6 +893,395 @@
     </table>
 </section>
 
+<!--- Introducción a Media Queries  ----->
+<section>
+    <h2>📱 Media Queries: Diseño Responsive</h2>
+    
+    <p><strong>Media Queries</strong> son una técnica fundamental de CSS que permite aplicar estilos diferentes según las características del dispositivo donde se visualiza la página web. Son la base del <strong>diseño responsive</strong>, permitiendo que un mismo sitio web se vea perfectamente en móviles, tablets, computadoras y hasta en impresoras.</p>
+    
+    <h3>📋 ¿Para qué sirven las Media Queries?</h3>
+    <ul>
+        <li><strong>Adaptabilidad:</strong> Un mismo sitio web se ve bien en cualquier dispositivo.</li>
+        <li><strong>Experiencia de usuario:</strong> Optimiza la navegación según el tamaño de pantalla.</li>
+        <li><strong>Rendimiento:</strong> Puedes cargar recursos diferentes según el dispositivo.</li>
+        <li><strong>SEO:</strong> Google prioriza sitios web responsive en búsquedas móviles.</li>
+        <li><strong>Mantenimiento:</strong> Un solo código base para todos los dispositivos.</li>
+    </ul>
+
+    <h3>🔧 Sintaxis básica de Media Queries</h3>
+    
+    <div class="ejemplo">
+        @media [tipo] and (característica: valor) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;/* Estilos que se aplican cuando se cumple la condición */<br>
+        }<br><br>
+        
+        /* Ejemplo básico */<br>
+        @media screen and (max-width: 768px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;body {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: lightblue;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </div>
+
+    <h3>📏 Tipos de medios (Media Types)</h3>
+    <ul>
+        <li><code>screen</code>: Pantallas de computadoras, tablets, móviles (el más usado).</li>
+        <li><code>print</code>: Para impresoras y vista previa de impresión.</li>
+        <li><code>all</code>: Todos los dispositivos (valor por defecto).</li>
+        <li><code>speech</code>: Lectores de pantalla.</li>
+    </ul>
+
+    <h3>📐 Características más comunes (Media Features)</h3>
+    <table class="propiedades-table">
+        <tr>
+            <th>Característica</th>
+            <th>Qué hace</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td><code>width / max-width / min-width</code></td>
+            <td>Ancho de la pantalla</td>
+            <td><code>@media (max-width: 600px) { }</code></td>
+        </tr>
+        <tr>
+            <td><code>height / max-height / min-height</code></td>
+            <td>Alto de la pantalla</td>
+            <td><code>@media (min-height: 500px) { }</code></td>
+        </tr>
+        <tr>
+            <td><code>orientation</code></td>
+            <td>Orientación del dispositivo</td>
+            <td><code>@media (orientation: landscape) { }</code></td>
+        </tr>
+        <tr>
+            <td><code>aspect-ratio</code></td>
+            <td>Relación de aspecto</td>
+            <td><code>@media (aspect-ratio: 16/9) { }</code></td>
+        </tr>
+        <tr>
+            <td><code>resolution</code></td>
+            <td>Resolución de pantalla</td>
+            <td><code>@media (min-resolution: 2dppx) { }</code></td>
+        </tr>
+        <tr>
+            <td><code>hover</code></td>
+            <td>Si soporta hover</td>
+            <td><code>@media (hover: hover) { }</code></td>
+        </tr>
+    </table>
+
+    <h3>🎯 Ejemplo 1: Cambio de color según tamaño</h3>
+    <p>Redimensiona la ventana para ver cómo cambia el color del recuadro:</p>
+    
+    <div class="media-demo">
+        <div class="demo-caja" id="demoColor">
+            <p>📊 <strong>Redimensiona la ventana</strong></p>
+            <p class="tamaño-actual"></p>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        /* Estilos base */<br>
+        .demo-caja {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;background: #4CAF50;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br>
+        }<br><br>
+        
+        /* Móvil */<br>
+        @media (max-width: 480px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.demo-caja { background: #f44336; }<br>
+        }<br><br>
+        
+        /* Tablet */<br>
+        @media (min-width: 481px) and (max-width: 768px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.demo-caja { background: #ff9800; }<br>
+        }<br><br>
+        
+        /* Escritorio */<br>
+        @media (min-width: 769px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.demo-caja { background: #4CAF50; }<br>
+        }
+    </div>
+
+    <h3>📱 Ejemplo 2: Layout responsive</h3>
+    <p>Observa cómo cambia la disposición de las tarjetas según el tamaño de pantalla:</p>
+    
+    <div class="media-demo">
+        <div class="layout-responsive">
+            <div class="responsive-card">Card 1</div>
+            <div class="responsive-card">Card 2</div>
+            <div class="responsive-card">Card 3</div>
+            <div class="responsive-card">Card 4</div>
+            <div class="responsive-card">Card 5</div>
+            <div class="responsive-card">Card 6</div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        .layout-responsive {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;gap: 15px;<br>
+        }<br><br>
+        
+        /* Móvil: 1 columna */<br>
+        @media (max-width: 480px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.layout-responsive {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }<br><br>
+        
+        /* Tablet: 2 columnas */<br>
+        @media (min-width: 481px) and (max-width: 768px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.layout-responsive {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(2, 1fr);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }<br><br>
+        
+        /* Escritorio: 3 columnas */<br>
+        @media (min-width: 769px) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.layout-responsive {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </div>
+
+    <h3>🖨️ Ejemplo 3: Estilos para impresión</h3>
+    <p>Haz clic en "Vista previa de impresión" para ver cómo se ocultan elementos innecesarios:</p>
+    
+    <div class="media-demo">
+        <div class="print-demo">
+            <div class="print-header">📄 Encabezado de la página</div>
+            <div class="print-content">
+                <p>Este es el contenido principal que sí se imprimirá.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="print-sidebar">📌 Barra lateral (no se imprime)</div>
+            <div class="print-footer">🔗 Menú de navegación (no se imprime)</div>
+            <div class="print-ads">📢 Publicidad (no se imprime)</div>
+        </div>
+        <button class="btn-print" onclick="window.print()">🖨️ Vista previa de impresión</button>
+    </div>
+    
+    <div class="ejemplo">
+        @media print {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.print-sidebar,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.print-footer,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.print-ads {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: none;  /* Se ocultan en impresión */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;body {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 12pt;  /* Tamaño para impresión */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </div>
+
+    <h3>🔄 Ejemplo 4: Orientación del dispositivo</h3>
+    <p>Gira tu dispositivo móvil o redimensiona la ventana para ver el cambio:</p>
+    
+    <div class="media-demo">
+        <div class="orientacion-demo">
+            <div class="orientacion-contenido">
+                <span class="orientacion-icono">📱</span>
+                <p><strong>Orientación actual:</strong></p>
+                <p class="orientacion-texto">Horizontal / Vertical</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        /* Estilo para horizontal */<br>
+        @media (orientation: landscape) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.orientacion-demo {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(90deg, #4CAF50, #2196f3);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }<br><br>
+        
+        /* Estilo para vertical */<br>
+        @media (orientation: portrait) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;.orientacion-demo {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: linear-gradient(180deg, #ff9800, #f44336);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        }
+    </div>
+
+    <h3>🎨 Ejemplo 5: Combinando múltiples condiciones</h3>
+    <p>Podemos combinar varias condiciones usando operadores lógicos:</p>
+    
+    <div class="media-demo">
+        <div class="combinadas-demo">
+            <div class="condiciones-info">
+                <h4>Operadores lógicos:</h4>
+                <ul>
+                    <li><code>and</code> - Todas las condiciones deben cumplirse</li>
+                    <li><code>,</code> (coma) - Cualquier condición puede cumplirse (OR)</li>
+                    <li><code>not</code> - Niega la condición</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ejemplo">
+        /* AND: ambas condiciones */<br>
+        @media (min-width: 768px) and (orientation: landscape) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;/* Tablets en horizontal o más grandes */<br>
+        }<br><br>
+        
+        /* OR (coma): cualquiera de las condiciones */<br>
+        @media (max-width: 480px), (orientation: portrait) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;/* Móviles O cualquier dispositivo en vertical */<br>
+        }<br><br>
+        
+        /* NOT: negación */<br>
+        @media not (hover: hover) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;/* Dispositivos que NO soportan hover (táctiles) */<br>
+        }
+    </div>
+
+    <h3>📊 Puntos de ruptura comunes (Breakpoints)</h3>
+    <table class="propiedades-table">
+        <tr>
+            <th>Dispositivo</th>
+            <th>Breakpoint</th>
+            <th>Uso común</th>
+        </tr>
+        <tr>
+            <td>Móviles pequeños</td>
+            <td><code>max-width: 480px</code></td>
+            <td>Smartphones en vertical</td>
+        </tr>
+        <tr>
+            <td>Móviles grandes</td>
+            <td><code>481px - 768px</code></td>
+            <td>Smartphones en horizontal, phablets</td>
+        </tr>
+        <tr>
+            <td>Tablets</td>
+            <td><code>769px - 1024px</code></td>
+            <td>iPads, tablets Android</td>
+        </tr>
+        <tr>
+            <td>Escritorio</td>
+            <td><code>1025px - 1440px</code></td>
+            <td>Laptops, monitores estándar</td>
+        </tr>
+        <tr>
+            <td>Pantallas grandes</td>
+            <td><code>1441px+</code></td>
+            <td>Monitores 4K, pantallas ultra-wide</td>
+        </tr>
+    </table>
+
+    <h3>💡 Estrategias de diseño responsive</h3>
+    <div class="estrategias-grid">
+        <div class="estrategia-card">
+            <h4>📱 Mobile First</h4>
+            <p>Diseñar primero para móviles y luego adaptar a pantallas más grandes usando <code>min-width</code>.</p>
+            <div class="ejemplo-small">
+                /* Base: móvil */<br>
+                .elemento { width: 100%; }<br><br>
+                
+                /* Tablet */<br>
+                @media (min-width: 768px) {<br>
+                &nbsp;&nbsp;.elemento { width: 50%; }<br>
+                }<br><br>
+                
+                /* Escritorio */<br>
+                @media (min-width: 1024px) {<br>
+                &nbsp;&nbsp;.elemento { width: 33.333%; }<br>
+                }
+            </div>
+        </div>
+        
+        <div class="estrategia-card">
+            <h4>💻 Desktop First</h4>
+            <p>Diseñar primero para escritorio y luego adaptar a pantallas más pequeñas usando <code>max-width</code>.</p>
+            <div class="ejemplo-small">
+                /* Base: escritorio */<br>
+                .elemento { width: 33.333%; }<br><br>
+                
+                /* Tablet */<br>
+                @media (max-width: 1024px) {<br>
+                &nbsp;&nbsp;.elemento { width: 50%; }<br>
+                }<br><br>
+                
+                /* Móvil */<br>
+                @media (max-width: 768px) {<br>
+                &nbsp;&nbsp;.elemento { width: 100%; }<br>
+                }
+            </div>
+        </div>
+    </div>
+
+    <h3>⚡ Buenas prácticas con Media Queries</h3>
+    <ul>
+        <li><strong>Usa breakpoints relativos:</strong> Prefiere <code>em</code> o <code>rem</code> sobre píxeles para mejor accesibilidad.</li>
+        <li><strong>Organiza tus queries:</strong> Agrúpalas al final del archivo o cerca de los estilos relacionados.</li>
+        <li><strong>No repitas estilos:</strong> Aprovecha la herencia y cascada de CSS.</li>
+        <li><strong>Prueba en dispositivos reales:</strong> No confíes solo en el simulador del navegador.</li>
+        <li><strong>Mobile First es recomendado:</strong> Más fácil de mantener y mejor rendimiento en móviles.</li>
+    </ul>
+
+    <h3>🔍 Ejemplo interactivo completo</h3>
+    <p>Cambia el tamaño de la ventana para ver todos los cambios en acción:</p>
+    
+    <div class="media-demo">
+        <div class="completo-demo">
+            <div class="demo-header">📱 Demo Responsive Completo</div>
+            <div class="demo-main">
+                <div class="demo-sidebar">📌 Barra lateral</div>
+                <div class="demo-content">
+                    <h4>Contenido principal</h4>
+                    <p>Este layout cambia completamente según el tamaño de pantalla:</p>
+                    <ul class="demo-lista">
+                        <li>Móvil: Todo en columna</li>
+                        <li>Tablet: Sidebar arriba, contenido abajo</li>
+                        <li>Escritorio: Sidebar izquierda, contenido derecha</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="demo-footer">© 2024 - Demo Responsive</div>
+        </div>
+    </div>
+
+    <h3>📝 Resumen: Cuándo usar Media Queries</h3>
+    <ul>
+        <li>✅ Cambiar layouts (columnas vs filas)</li>
+        <li>✅ Ajustar tamaños de fuente</li>
+        <li>✅ Ocultar/mostrar elementos</li>
+        <li>✅ Modificar márgenes y paddings</li>
+        <li>✅ Cambiar direcciones de flexbox/grid</li>
+        <li>✅ Estilos específicos para impresión</li>
+        <li>✅ Adaptarse a orientación del dispositivo</li>
+        <li>✅ Optimizar para alta resolución (Retina)</li>
+    </ul>
+</section>
+
+<!-- Script para mostrar el tamaño actual de la ventana -->
+<script>
+    // Actualizar el tamaño de pantalla en el demo
+    function actualizarTamaño() {
+        const elementos = document.querySelectorAll('.tamaño-actual');
+        elementos.forEach(elem => {
+            if (elem) {
+                elem.textContent = `Tamaño actual: ${window.innerWidth}px`;
+            }
+        });
+        
+        // Actualizar orientación
+        const orientacionTexto = document.querySelector('.orientacion-texto');
+        if (orientacionTexto) {
+            const ancho = window.innerWidth;
+            const alto = window.innerHeight;
+            const orientacion = ancho > alto ? 'Horizontal (landscape)' : 'Vertical (portrait)';
+            orientacionTexto.textContent = orientacion;
+        }
+    }
+    
+    window.addEventListener('load', actualizarTamaño);
+    window.addEventListener('resize', actualizarTamaño);
+</script>
+
     <footer style="text-align: center; margin-top: 20px; color: #777;">
         <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>
     </footer>
