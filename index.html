@@ -191,7 +191,96 @@
                 .fuente2 { font-family: 'Courier New', monospace; }
             </div>
         </section>
-    
+
+       <!--- Introduciión a Flexbox  ----->
+        <section>
+            <h2>Introducción a Flexbox</h2>
+            <p><strong>Flexbox</strong> (Flexible Box Layout) es un modelo de diseño en CSS que facilita la creación de layouts flexibles y eficientes, permitiendo alinear y distribuir espacio entre los elementos de un contenedor, incluso cuando su tamaño es desconocido o dinámico.</p>
+            <ul>
+                <li><strong>¿Para qué sirve?</strong> Para crear diseños responsivos, centrar elementos fácilmente, distribuir espacio y controlar el alineamiento de los hijos de un contenedor.</li>
+                <li><strong>¿Cómo se usa?</strong> Se activa con <code>display: flex;</code> en el contenedor. Luego, puedes usar propiedades como <code>justify-content</code>, <code>align-items</code> y <code>flex-direction</code> para controlar la disposición de los elementos.</li>
+            </ul>
+            <div class="flexbox-ejemplo">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+            <div class="ejemplo">
+                .flexbox-ejemplo {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;gap: 10px;<br>
+                }<br>
+                .flexbox-ejemplo div {<br>
+                &nbsp;&nbsp;background: #90caf9;<br>
+                &nbsp;&nbsp;padding: 16px;<br>
+                &nbsp;&nbsp;border-radius: 6px;<br>
+                }
+            </div>
+        </section>
+       
+       <!--- Flexbox Position: Static, Relative y Absolute  ----->
+        <section>
+            <h2>Introducción a <code>position</code>: static, relative y absolute</h2>
+            <p>La propiedad <strong>position</strong> en CSS controla cómo se posiciona un elemento en la página. Los valores más comunes son:</p>
+            <ul>
+                <li><strong>static</strong> (por defecto): El elemento sigue el flujo normal del documento. No se puede mover con <code>top</code>, <code>left</code>, <code>right</code> o <code>bottom</code>.</li>
+                <li><strong>relative</strong>: El elemento se posiciona relativo a su posición original. Puedes moverlo usando <code>top</code>, <code>left</code>, etc., pero sigue ocupando su espacio original.</li>
+                <li><strong>absolute</strong>: El elemento se posiciona respecto a su primer ancestro posicionado (que no sea static) o al viewport. Sale del flujo normal y no ocupa espacio.</li>
+            </ul>
+            <div class="position-ejemplo">
+                <div class="static">Static</div>
+                <div class="relative">Relative</div>
+                <div class="absolute-container">
+                    <div class="absolute">Absolute</div>
+                </div>
+            </div>
+            <div class="ejemplo">
+                .static { position: static; background: #e0e0e0; }<br>
+                .relative { position: relative; left: 30px; background: #ffe082; }<br>
+                .absolute-container { position: relative; height: 60px; background: #fffde7; }<br>
+                .absolute { position: absolute; top: 10px; left: 10px; background: #b2dfdb; }
+            </div>
+        </section>
+       
+        <!--- Flexbox Position: Fixed y Sticky  ----->
+            <section>
+                <h2>Introducción a <code>position: fixed</code> y <code>sticky</code></h2>
+                <p><strong>position: fixed</strong> y <strong>position: sticky</strong> son valores avanzados de la propiedad <code>position</code> en CSS que permiten crear elementos que permanecen visibles en la pantalla de formas especiales.</p>
+                <ul>
+                    <li><strong>fixed:</strong> El elemento se posiciona respecto a la ventana del navegador (viewport). Permanece fijo aunque hagas scroll. Se usa para menús, botones flotantes, banners, etc.</li>
+                    <li><strong>sticky:</strong> El elemento actúa como <code>relative</code> hasta que alcanza un punto definido (por ejemplo, <code>top: 0</code>), y luego se comporta como <code>fixed</code> mientras se hace scroll. Es útil para encabezados o menús que deben quedarse visibles al hacer scroll.</li>
+                </ul>
+                <div class="position-ejemplo-fixed-sticky">
+                    <div class="fixed-ejemplo">Fixed<br><span>(Siempre visible)</span></div>
+                    <div class="sticky-container">
+                        <div class="sticky-ejemplo">Sticky<br><span>(Se pega al hacer scroll)</span></div>
+                        <div style="height: 120px;"></div>
+                    </div>
+                </div>
+                <div class="ejemplo">
+                    .fixed-ejemplo {<br>
+                    &nbsp;&nbsp;position: fixed;<br>
+                    &nbsp;&nbsp;top: 20px;<br>
+                    &nbsp;&nbsp;right: 20px;<br>
+                    &nbsp;&nbsp;background: #ffccbc;<br>
+                    &nbsp;&nbsp;padding: 12px 20px;<br>
+                    &nbsp;&nbsp;border-radius: 6px;<br>
+                    }<br>
+                    .sticky-ejemplo {<br>
+                    &nbsp;&nbsp;position: sticky;<br>
+                    &nbsp;&nbsp;top: 0;<br>
+                    &nbsp;&nbsp;background: #dcedc8;<br>
+                    &nbsp;&nbsp;padding: 12px 20px;<br>
+                    &nbsp;&nbsp;border-radius: 6px;<br>
+                    }
+                </div>
+                <ul>
+                    <li><strong>Características de fixed:</strong> Siempre visible, no depende del scroll del contenido, puede superponerse a otros elementos.</li>
+                    <li><strong>Características de sticky:</strong> Solo funciona dentro de su contenedor, necesita un valor de <code>top</code>, <code>left</code>, etc., y requiere suficiente espacio en el contenedor para activarse.</li>
+                </ul>
+            </section>
+        
+
 
     <footer style="text-align: center; margin-top: 20px; color: #777;">
         <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>

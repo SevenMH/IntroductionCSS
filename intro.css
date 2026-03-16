@@ -1,29 +1,89 @@
+.position-ejemplo {
+    margin: 32px 0 16px 0;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px;
+}
+.static {
+    position: static;
+    background: #e0e0e0;
+    padding: 10px 18px;
+    border-radius: 4px;
+}
+.relative {
+    position: relative;
+    left: 30px;
+    background: #ffe082;
+    padding: 10px 18px;
+    border-radius: 4px;
+}
+.absolute-container {
+    position: relative;
+    height: 60px;
+    background: #fffde7;
+    border-radius: 4px;
+}
+.absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #b2dfdb;
+    padding: 10px 18px;
+    border-radius: 4px;
+}
+.flexbox-ejemplo {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin: 24px 0;
+}
+.flexbox-ejemplo div {
+    background: #90caf9;
+    padding: 16px 24px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1565c0;
+    min-width: 32px;
+    text-align: center;
+}
 .especificidad-ejemplo {
     margin: 24px 0 12px 0;
     text-align: center;
 }
+
 #demo {
     color: red;
     font-weight: bold;
 }
+
 .importante {
     color: orange;
 }
+
 .especificidad-ejemplo p {
     color: gray;
     font-size: 1.2em;
     margin: 0;
 }
+
 .fuentes-ejemplo {
     margin: 16px 0 8px 0;
     text-align: center;
 }
+
 .fuente1 {
     font-family: Arial, sans-serif;
 }
+
 .fuente2 {
     font-family: 'Courier New', monospace;
 }
+
 .herencia-ejemplo {
     display: flex;
     justify-content: center;
@@ -42,6 +102,7 @@
 .padre ul {
     margin-left: 20px;
 }
+
 .box-sizing-ejemplo-container {
     display: flex;
     gap: 40px;
@@ -60,13 +121,13 @@
     font-size: 1em;
     text-align: center;
 }
+
 .box-sizing-ejemplo.border-box {
     border-color: #4caf50;
     background: #e8f5e9;
     color: #256029;
     box-sizing: border-box;
 }
-
 
 /* Ejemplo visual del Box Model */
 .box-model-ejemplo {
@@ -143,4 +204,49 @@ code {
 .destacado {
     color: #d32f2f;
     font-weight: bold;
+}
+
+/* Introducción a Fixed y Sticky*/
+
+.position-ejemplo-fixed-sticky {
+    min-height: 180px;
+    margin: 32px 0 16px 0;
+    position: relative;
+}
+.fixed-ejemplo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffccbc;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: #bf360c;
+    font-weight: bold;
+    box-shadow: 0 2px 8px #0001;
+    z-index: 100;
+}
+.sticky-container {
+    margin-top: 40px;
+    height: 160px;
+    background: #f1f8e9;
+    border-radius: 6px;
+    overflow: auto;
+    position: relative;
+}
+.sticky-ejemplo {
+    position: sticky;
+    top: 0;
+    background: #dcedc8;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: #33691e;
+    font-weight: bold;
+    box-shadow: 0 2px 8px #0001;
+}
+.fixed-ejemplo span,
+.sticky-ejemplo span {
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #555;
 }
