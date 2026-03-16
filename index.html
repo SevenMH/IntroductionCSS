@@ -18,9 +18,7 @@
 
         <p><strong>CSS</strong> (Cascading Style Sheets) es un lenguaje que define la presentación de un documento escrito en HTML. Con CSS controlamos colores, fuentes, márgenes, posiciones y mucho más.</p>
         <p>CSS funciona mediante <strong>reglas</strong> que asocian propiedades y valores a elementos HTML.</p>
-    </section>
-
-    <section>
+    
         <h2>Sintaxis básica</h2>
         <p>Una regla CSS se compone de un <strong>selector</strong> y un bloque de declaraciones entre llaves <code>{ }</code>:</p>
         <div class="ejemplo">
@@ -135,7 +133,66 @@
             </ul>
         </section>
         
+         <section>
+            <h2>Herencia de estilos en CSS</h2>
+            <p>En CSS, muchas propiedades se heredan automáticamente de los elementos padres a sus hijos. Esto significa que si defines un estilo en un contenedor, sus elementos internos pueden recibir ese mismo estilo sin necesidad de volver a declararlo.</p>
+            <div class="herencia-ejemplo">
+                <div class="padre">
+                    <strong>Div padre (color: purple; font-family: monospace;)</strong>
+                    <p>Este párrafo hereda el color y la fuente del padre.</p>
+                    <ul>
+                        <li>Este <span>texto</span> también hereda.</li>
+                    </ul>
+                </div>
+            </div>
+            <ul>
+                <li><strong>¿Qué se hereda?</strong> Propiedades como <code>color</code>, <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, entre otras.</li>
+                <li><strong>¿Qué no se hereda?</strong> Propiedades como <code>margin</code>, <code>padding</code>, <code>border</code>, <code>background</code> no se heredan por defecto.</li>
+                <li><strong>Utilidad:</strong> La herencia permite escribir menos código y mantener estilos consistentes.</li>
+                <li><strong>Característica:</strong> Puedes forzar la herencia usando <code>inherit</code> o evitarla con <code>initial</code> o <code>unset</code>.</li>
+            </ul>
+            <div class="ejemplo">
+                .padre {
+                <br>&nbsp;&nbsp;color: purple;
+                <br>&nbsp;&nbsp;font-family: monospace;
+                <br>}
+            </div>
+        </section>
+    <section>
     
+         <section>
+            <h2>Especificidad y fuentes en CSS</h2>
+            <p><strong>Especificidad</strong> determina qué regla CSS se aplica cuando varias coinciden sobre el mismo elemento. Las reglas más específicas tienen prioridad sobre las menos específicas.</p>
+            <div class="especificidad-ejemplo">
+                <p id="demo" class="importante">¡Texto de ejemplo!</p>
+            </div>
+            <ul>
+                <li><strong>Selector de elemento</strong> (p): especificidad baja.</li>
+                <li><strong>Selector de clase</strong> (.importante): especificidad media.</li>
+                <li><strong>Selector de ID</strong> (#demo): especificidad alta.</li>
+                <li>Si hay conflicto, gana la regla con mayor especificidad.</li>
+            </ul>
+            <div class="ejemplo">
+                p { color: gray; }<br>
+                .importante { color: orange; }<br>
+                #demo { color: red; }
+            </div>
+            <p><strong>Fuentes</strong> en CSS permiten personalizar la tipografía de tu sitio. Puedes usar fuentes estándar, importar fuentes externas o personalizadas.</p>
+            <div class="fuentes-ejemplo">
+                <p class="fuente1">Esta línea usa Arial.</p>
+                <p class="fuente2">Esta línea usa 'Courier New'.</p>
+            </div>
+            <ul>
+                <li><strong>Utilidad:</strong> La especificidad ayuda a controlar qué estilos se aplican. Las fuentes mejoran la identidad visual y legibilidad.</li>
+                <li><strong>Características:</strong> Puedes combinar fuentes, usar <code>font-family</code>, importar fuentes con <code>@import</code> o <code>@font-face</code>.</li>
+            </ul>
+            <div class="ejemplo">
+                .fuente1 { font-family: Arial, sans-serif; }<br>
+                .fuente2 { font-family: 'Courier New', monospace; }
+            </div>
+        </section>
+    
+
     <footer style="text-align: center; margin-top: 20px; color: #777;">
         <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>
     </footer>

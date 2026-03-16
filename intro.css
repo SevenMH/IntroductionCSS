@@ -1,9 +1,54 @@
+.especificidad-ejemplo {
+    margin: 24px 0 12px 0;
+    text-align: center;
+}
+#demo {
+    color: red;
+    font-weight: bold;
+}
+.importante {
+    color: orange;
+}
+.especificidad-ejemplo p {
+    color: gray;
+    font-size: 1.2em;
+    margin: 0;
+}
+.fuentes-ejemplo {
+    margin: 16px 0 8px 0;
+    text-align: center;
+}
+.fuente1 {
+    font-family: Arial, sans-serif;
+}
+.fuente2 {
+    font-family: 'Courier New', monospace;
+}
+.herencia-ejemplo {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+.padre {
+    border: 2px dashed purple;
+    padding: 20px 32px;
+    color: purple;
+    font-family: monospace;
+    background: #f3e5f5;
+    max-width: 400px;
+}
+
+.padre ul {
+    margin-left: 20px;
+}
 .box-sizing-ejemplo-container {
     display: flex;
     gap: 40px;
     justify-content: center;
     margin: 32px 0;
 }
+
 .box-sizing-ejemplo {
     width: 200px;
     padding: 20px;
@@ -21,6 +66,8 @@
     color: #256029;
     box-sizing: border-box;
 }
+
+
 /* Ejemplo visual del Box Model */
 .box-model-ejemplo {
     margin: 40px 0;
