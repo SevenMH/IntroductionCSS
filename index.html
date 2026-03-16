@@ -15,6 +15,7 @@
 
     <section>
         <h2>¿Qué es CSS?</h2>
+
         <p><strong>CSS</strong> (Cascading Style Sheets) es un lenguaje que define la presentación de un documento escrito en HTML. Con CSS controlamos colores, fuentes, márgenes, posiciones y mucho más.</p>
         <p>CSS funciona mediante <strong>reglas</strong> que asocian propiedades y valores a elementos HTML.</p>
     </section>
@@ -89,6 +90,52 @@
         <p>Y este es un <span class="destacado">texto destacado</span> usando una clase CSS.</p>
     </section>
 
+    <link rel="stylesheet" href="intro.css">
+<section>
+            <h2>¿Qué es el Box Model?</h2>
+            <p>El <strong>Box Model</strong> es un concepto fundamental en CSS que describe cómo se estructuran y representan los elementos en la página web. Cada elemento se representa como una caja compuesta por: <strong>contenido</strong>, <strong>padding</strong> (relleno), <strong>borde</strong> y <strong>margen</strong>.</p>
+            <div class="box-model-ejemplo">
+                <div class="margin">Margen
+                    <div class="border">Borde
+                        <div class="padding">Relleno
+                            <div class="content">Contenido</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><strong>Contenido:</strong> Lo que ves dentro de la caja (texto, imagen, etc).</li>
+                <li><strong>Padding (Relleno):</strong> Espacio entre el contenido y el borde.</li>
+                <li><strong>Borde:</strong> Línea que rodea el padding y el contenido.</li>
+                <li><strong>Margen:</strong> Espacio fuera del borde, separa la caja de otros elementos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>¿Qué es <code>box-sizing</code>?</h2>
+            <p>La propiedad <strong>box-sizing</strong> en CSS define cómo se calculan el ancho y alto total de los elementos. Por defecto, el tamaño de un elemento se calcula sumando el contenido, el padding y el borde (<code>content-box</code>). Si usas <code>box-sizing: border-box</code>, el padding y el borde se incluyen dentro del ancho y alto especificados, facilitando el diseño de layouts.</p>
+            <div class="box-sizing-ejemplo-container">
+                <div class="box-sizing-ejemplo content-box">
+                    <strong>content-box (por defecto)</strong><br>
+                    width: 200px;<br>
+                    padding: 20px;<br>
+                    border: 4px solid #2196f3;
+                </div>
+                <div class="box-sizing-ejemplo border-box">
+                    <strong>border-box</strong><br>
+                    width: 200px;<br>
+                    padding: 20px;<br>
+                    border: 4px solid #4caf50;<br>
+                    box-sizing: border-box;
+                </div>
+            </div>
+            <ul>
+                <li><strong>content-box:</strong> El ancho <em>no</em> incluye padding ni borde. El elemento será más grande de lo que defines.</li>
+                <li><strong>border-box:</strong> El ancho <em>sí</em> incluye padding y borde. El tamaño total es exactamente el que defines.</li>
+            </ul>
+        </section>
+        
+    
     <footer style="text-align: center; margin-top: 20px; color: #777;">
         <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>
     </footer>

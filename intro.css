@@ -1,3 +1,59 @@
+.box-sizing-ejemplo-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin: 32px 0;
+}
+.box-sizing-ejemplo {
+    width: 200px;
+    padding: 20px;
+    border: 4px solid #2196f3;
+    background: #e3f2fd;
+    color: #0d47a1;
+    margin-bottom: 8px;
+    box-sizing: content-box;
+    font-size: 1em;
+    text-align: center;
+}
+.box-sizing-ejemplo.border-box {
+    border-color: #4caf50;
+    background: #e8f5e9;
+    color: #256029;
+    box-sizing: border-box;
+}
+/* Ejemplo visual del Box Model */
+.box-model-ejemplo {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+.margin {
+    background: #ffe0b2;
+    padding: 20px;
+    color: #a65c00;
+    font-weight: bold;
+}
+.border {
+    border: 4px solid #ff9800;
+    padding: 20px;
+    background: #fff3e0;
+    color: #e65100;
+}
+.padding {
+    background: #fffde7;
+    padding: 20px;
+    color: #827717;
+}
+.content {
+    background: #bbdefb;
+    padding: 20px;
+    color: #0d47a1;
+    text-align: center;
+    font-weight: bold;
+}
+.box-model-ejemplo div {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
