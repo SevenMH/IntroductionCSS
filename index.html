@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <h1>🌟 Lo básico de CSS</h1>
+        <h1>🌟 Introducción al mundo de CSS</h1>
         <p>Aprende los fundamentos para dar estilo a tus páginas web</p>
     </header>
 
@@ -282,7 +282,7 @@
         
     <!--- Introducción a Alineación con Flexbox  ----->
 <section>
-    <h2> Alineación con Flexbox </h2>
+    <h2>Alineación con Flexbox </h2>
     <p><strong>Flexbox</strong> no solo sirve para distribuir elementos, sino que ofrece un potente sistema de alineación tanto en el eje principal (horizontal por defecto) como en el eje cruzado (vertical). Con las propiedades adecuadas podemos controlar la posición de los elementos de manera precisa y sencilla.</p>
     
     <!--- Subtema: Alinear y centrar  ----->
@@ -371,7 +371,82 @@
     </div>
 </section>
 
-<!---- Position CSS --->
+<!--- Introducción a Navbar  ----->
+<section>
+    <h2>🧭 ¿Qué es una Navbar y para qué sirve?</h2>
+    
+    <p><strong>Navbar</strong> (abreviatura de "navigation bar") es una barra de navegación que permite a los usuarios moverse entre las diferentes secciones o páginas de un sitio web. Es uno de los componentes más importantes en el diseño web, ya que proporciona la estructura de navegación principal.</p>
+    
+    <h3>📋 ¿Para qué sirve?</h3>
+    <ul>
+        <li><strong>Organizar el contenido:</strong> Ayuda a estructurar la información del sitio en categorías lógicas.</li>
+        <li><strong>Mejorar la experiencia de usuario:</strong> Los usuarios pueden encontrar rápidamente lo que buscan.</li>
+        <li><strong>Consistencia:</strong> Aparece en todas las páginas, manteniendo la navegación familiar.</li>
+        <li><strong>Jerarquía visual:</strong> Muestra la importancia de las diferentes secciones.</li>
+        <li><strong>Responsive:</strong> Las navbars modernas se adaptan a diferentes tamaños de pantalla.</li>
+    </ul>
+    
+    <h3>🏗️ Ejemplo de Navbar básica</h3>
+    <p>A continuación, un ejemplo de navbar creada con Flexbox para una distribución limpia y responsive:</p>
+    
+    <!-- Navbar de ejemplo -->
+    <nav class="navbar-ejemplo">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-text">🌐 MiSitio</span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <div class="navbar-auth">
+                <a href="#" class="btn-login">Iniciar sesión</a>
+                <a href="#" class="btn-register">Registrarse</a>
+            </div>
+            <button class="navbar-toggle">☰</button>
+        </div>
+    </nav>
+    
+    <p><small>ℹ️ Nota: El botón ☰ (menú hamburguesa) sería visible en dispositivos móviles.</small></p>
+    
+    <div class="ejemplo">
+        &lt;nav class="navbar"&gt;<br>
+        &nbsp;&nbsp;&lt;div class="navbar-container"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="navbar-logo"&gt;🌐 MiSitio&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="navbar-menu"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Productos&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Servicios&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="navbar-auth"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Login&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Registro&lt;/a&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/div&gt;<br>
+        &lt;/nav&gt;
+    </div>
+    
+    <h3>🎨 Tipos de Navbar</h3>
+    <ul>
+        <li><strong>Navbar horizontal:</strong> La más común, con enlaces en una línea horizontal.</li>
+        <li><strong>Navbar vertical/sidebar:</strong> Colocada en un lateral, útil para dashboards.</li>
+        <li><strong>Navbar fija/sticky:</strong> Permanece visible al hacer scroll.</li>
+        <li><strong>Navbar responsive:</strong> Se adapta a móviles con menú hamburguesa.</li>
+        <li><strong>Navbar con dropdown:</strong> Incluye submenús desplegables.</li>
+    </ul>
+    
+    <h3>💡 Buenas prácticas</h3>
+    <ul>
+        <li>Mantener los enlaces claros y concisos.</li>
+        <li>Usar máximo 5-7 elementos para no saturar.</li>
+        <li>Indicar la página actual con un estilo diferente (active).</li>
+        <li>Asegurar que sea accesible con teclado y lectores de pantalla.</li>
+        <li>Incluir el logo enlazado a la página principal.</li>
+    </ul>
+</section> 
 
 
     <footer style="text-align: center; margin-top: 20px; color: #777;">
