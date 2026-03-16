@@ -250,3 +250,88 @@ code {
     font-weight: normal;
     color: #555;
 }
+
+/* Estilos para Alineación con Flexbox */
+.flexbox-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin: 24px 0 16px 0;
+    gap: 12px;
+}
+
+.flexbox-demo-item {
+    background: #90caf9;
+    padding: 16px 24px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1565c0;
+    min-width: 32px;
+    text-align: center;
+}
+
+/* Alineación multilínea */
+.flexbox-multiline {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 12px;
+    height: 220px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin: 24px 0 16px 0;
+    padding: 16px;
+}
+
+.flexbox-multiline-item {
+    background: #ffcc80;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #bf360c;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Alineaciones específicas */
+.flexbox-specific {
+    display: flex;
+    align-items: flex-start;
+    height: 150px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin: 24px 0 16px 0;
+    gap: 12px;
+    padding: 16px;
+}
+
+.flexbox-specific-item {
+    background: #b39ddb;
+    padding: 16px 24px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4527a0;
+    min-width: 32px;
+    text-align: center;
+}
+
+.flexbox-specific-item.especial {
+    align-self: center;
+    background: #80cbc4;
+    color: #00695c;
+}
+
+/* Ajustes para títulos h3 dentro de secciones */
+section h3 {
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-left: 4px solid #4CAF50;
+    padding-left: 12px;
+}

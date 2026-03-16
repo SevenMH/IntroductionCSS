@@ -280,7 +280,96 @@
                 </ul>
             </section>
         
-
+    <!--- Introducción a Alineación con Flexbox  ----->
+<section>
+    <h2>📐 Alineación con Flexbox</h2>
+    <p><strong>Flexbox</strong> no solo sirve para distribuir elementos, sino que ofrece un potente sistema de alineación tanto en el eje principal (horizontal por defecto) como en el eje cruzado (vertical). Con las propiedades adecuadas podemos controlar la posición de los elementos de manera precisa y sencilla.</p>
+    
+    <!--- Subtema: Alinear y centrar  ----->
+    <h3>🎯 Alinear y centrar</h3>
+    <p>Las propiedades <code>justify-content</code> y <code>align-items</code> permiten alinear los elementos hijos en el eje principal y cruzado respectivamente. Con ellas podemos centrar elementos de forma fácil, algo que antes requería trucos complicados.</p>
+    <p><strong>¿Qué es?</strong> <code>justify-content</code> controla la alineación horizontal (si <code>flex-direction: row</code>) y <code>align-items</code> controla la alineación vertical. Valores comunes: <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, <code>space-between</code>, <code>space-around</code>.</p>
+    <p><strong>Usos:</strong> Centrar un botón en un contenedor, distribuir elementos de menú, alinear íconos con texto, etc.</p>
+    
+    <div class="flexbox-demo">
+        <div class="flexbox-demo-item">1</div>
+        <div class="flexbox-demo-item">2</div>
+        <div class="flexbox-demo-item">3</div>
+    </div>
+    
+    <div class="ejemplo">
+        .flexbox-demo {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;justify-content: center;    /* Centra horizontalmente */<br>
+        &nbsp;&nbsp;align-items: center;        /* Centra verticalmente */<br>
+        &nbsp;&nbsp;height: 150px;<br>
+        }<br>
+        .flexbox-demo-item {<br>
+        &nbsp;&nbsp;background: #90caf9;<br>
+        &nbsp;&nbsp;padding: 16px 24px;<br>
+        &nbsp;&nbsp;border-radius: 6px;<br>
+        }
+    </div>
+    
+    <!--- Subtema: Alineación multilínea  ----->
+    <h3>📏 Alineación multilínea</h3>
+    <p>Cuando los elementos no caben en una sola línea y usamos <code>flex-wrap: wrap</code>, podemos controlar cómo se alinean los grupos de elementos con <code>align-content</code>.</p>
+    <p><strong>¿Qué es?</strong> <code>align-content</code> alinea las líneas completas dentro del contenedor cuando hay espacio sobrante en el eje cruzado. Funciona similar a <code>justify-content</code> pero entre líneas, no entre elementos.</p>
+    <p><strong>Usos:</strong> Galerías de imágenes, grids de productos, layouts con muchas tarjetas que deben reorganizarse en filas.</p>
+    
+    <div class="flexbox-multiline">
+        <div class="flexbox-multiline-item">1</div>
+        <div class="flexbox-multiline-item">2</div>
+        <div class="flexbox-multiline-item">3</div>
+        <div class="flexbox-multiline-item">4</div>
+        <div class="flexbox-multiline-item">5</div>
+        <div class="flexbox-multiline-item">6</div>
+    </div>
+    
+    <div class="ejemplo">
+        .flexbox-multiline {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;flex-wrap: wrap;<br>
+        &nbsp;&nbsp;align-content: center;      /* Centra las filas completas */<br>
+        &nbsp;&nbsp;gap: 10px;<br>
+        &nbsp;&nbsp;height: 220px;<br>
+        }<br>
+        .flexbox-multiline-item {<br>
+        &nbsp;&nbsp;background: #ffcc80;<br>
+        &nbsp;&nbsp;padding: 16px;<br>
+        &nbsp;&nbsp;border-radius: 6px;<br>
+        }
+    </div>
+    
+    <!--- Subtema: Alineaciones específicas  ----->
+    <h3>🔧 Alineaciones específicas</h3>
+    <p>A veces necesitamos que un elemento en particular se alinee de manera diferente al resto. Para eso existe <code>align-self</code>, que permite sobrescribir la alineación definida por <code>align-items</code> en un elemento hijo concreto.</p>
+    <p><strong>¿Qué es?</strong> <code>align-self</code> acepta los mismos valores que <code>align-items</code> (<code>center</code>, <code>flex-start</code>, <code>flex-end</code>, etc.) y se aplica directamente sobre el elemento que queremos personalizar.</p>
+    <p><strong>Usos:</strong> Destacar un elemento, crear diseños asimétricos, ajustar la posición de un botón dentro de una tarjeta sin afectar a los demás.</p>
+    
+    <div class="flexbox-specific">
+        <div class="flexbox-specific-item">1</div>
+        <div class="flexbox-specific-item especial">2 (centrado)</div>
+        <div class="flexbox-specific-item">3</div>
+    </div>
+    
+    <div class="ejemplo">
+        .flexbox-specific {<br>
+        &nbsp;&nbsp;display: flex;<br>
+        &nbsp;&nbsp;align-items: flex-start;     /* Por defecto, todos arriba */<br>
+        &nbsp;&nbsp;height: 150px;<br>
+        &nbsp;&nbsp;gap: 10px;<br>
+        }<br>
+        .flexbox-specific-item {<br>
+        &nbsp;&nbsp;background: #b39ddb;<br>
+        &nbsp;&nbsp;padding: 16px;<br>
+        &nbsp;&nbsp;border-radius: 6px;<br>
+        }<br>
+        .especial {<br>
+        &nbsp;&nbsp;align-self: center;          /* Solo este se centra */<br>
+        }
+    </div>
+</section>
 
     <footer style="text-align: center; margin-top: 20px; color: #777;">
         <p>CSS es fácil y poderoso. ¡Sigue practicando! 🚀</p>
